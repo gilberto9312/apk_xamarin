@@ -9,7 +9,7 @@ namespace App2.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "About As";
 
             OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
         }

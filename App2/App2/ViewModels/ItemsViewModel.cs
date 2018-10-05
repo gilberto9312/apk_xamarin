@@ -7,6 +7,7 @@ using Xamarin.Forms;
 
 using App2.Models;
 using App2.Views;
+using System.Windows.Input;
 
 namespace App2.ViewModels
 {
@@ -14,12 +15,15 @@ namespace App2.ViewModels
     {
         public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
+        public Command OpenWebCommand2 { get; }
+        
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Receta";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            
 
             MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
@@ -27,8 +31,11 @@ namespace App2.ViewModels
                 Items.Add(_item);
                 await DataStore.AddItemAsync(_item);
             });
+
+            
         }
 
+  
         async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)
@@ -54,5 +61,7 @@ namespace App2.ViewModels
                 IsBusy = false;
             }
         }
+
+
     }
 }

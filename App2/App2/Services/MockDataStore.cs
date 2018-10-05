@@ -17,12 +17,11 @@ namespace App2.Services
             items = new List<Item>();
             var mockItems = new List<Item>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Chocolate", Description="3 capas." },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Vainilla", Description="para el biscocho" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Pisos", Description="3 pisos de alto" },
+                new Item { Id = Guid.NewGuid().ToString(), Text = "Forma", Description="forma de estrella." },
+                
             };
 
             foreach (var item in mockItems)
